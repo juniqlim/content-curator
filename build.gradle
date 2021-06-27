@@ -25,6 +25,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'com.h2database:h2:1.4.200'
+    implementation 'com.rometools:rome:1.15.0'
+    implementation 'commons-beanutils:commons-beanutils:1.9.4'
 }
 
 test {
