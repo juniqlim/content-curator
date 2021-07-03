@@ -11,11 +11,20 @@ import java.net.URL;
 import org.junit.jupiter.api.Test;
 
 class FeedReaderTest {
-    @Test
-    void test() throws IOException, FeedException {
+    public static SyndFeed feed;
+
+    static {
         SyndFeedInput input = new SyndFeedInput();
         input.setPreserveWireFeed(true);
-        SyndFeed feed = input.build(new XmlReader(new URL("https://rss.blog.naver.com/arystal.xml")));
+        try {
+            feed = input.build(new XmlReader(new URL("https://rss.blog.naver.com/arystal.xml")));
+        } catch (FeedException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    void test() {
         assertThatCode(() -> ((CustomItem)feed.getEntries().get(0).getWireEntry()).getTags()).doesNotThrowAnyException();
     }
 }
