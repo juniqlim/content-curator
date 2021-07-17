@@ -13,6 +13,10 @@ public class ArticleService {
         articleRepository.save(article);
     }
 
+    public void create(List<Article> articles) {
+        articleRepository.saveAll(articles);
+    }
+
     public List<Article> findAll() {
         return articleRepository.findAll();
     }

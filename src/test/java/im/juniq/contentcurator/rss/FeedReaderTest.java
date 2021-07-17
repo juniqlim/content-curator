@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import org.junit.jupiter.api.Test;
 
-class FeedReaderTest {
+public class FeedReaderTest {
     public static SyndFeed feed;
 
     static {
